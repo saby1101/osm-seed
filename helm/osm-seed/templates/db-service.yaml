@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-db
   labels:
     app: {{ template "osm-seed.chart" . }}
-    component: db-service
+    component: 'db-service'
     environment: {{ .Values.environment }}
     release: {{ .Release.Name }}
 spec:
@@ -16,4 +16,5 @@ spec:
   selector:
     app: {{ template "osm-seed.name" . }}
     release: {{ .Release.Name }}
+    component: 'db-service'
     run: {{ .Release.Name }}-db

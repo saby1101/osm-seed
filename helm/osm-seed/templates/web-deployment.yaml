@@ -13,14 +13,17 @@ spec:
     matchLabels:
       app: {{ template "osm-seed.name" . }}
       release: {{ .Release.Name }}
-      run: {{ .Release.Name }}-web
+      environment: {{ .Values.environment }}
+      component: web-deployment
   template:
     metadata:
       labels:
-        app: {{ template "osm-seed.chart" . }}
-        component: web-deployment
-        environment: {{ .Values.environment }}
+        app: {{ template "osm-seed.name" . }}
         release: {{ .Release.Name }}
+        environment: {{ .Values.environment }}
+        component: web-deployment
+
+
     spec:
       containers:
         - name: {{ .Chart.Name }}-web
