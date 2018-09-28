@@ -3,6 +3,7 @@
 In order to acces to the kubectl dashboard you need to get the token:
 
 ```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 kubectl -n kube-system get secret
 ```
 
