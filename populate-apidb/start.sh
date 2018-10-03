@@ -20,7 +20,8 @@ function importData () {
         database=$POSTGRES_DB \
         user=$POSTGRES_USER \
         password=$POSTGRES_PASSWORD \
-        validateSchemaVersion=no
+        validateSchemaVersion=no \
+        --buffer
     else
         # In case the file is .osm
         # Extract the osm file
@@ -34,7 +35,8 @@ function importData () {
         database=$POSTGRES_DB \
         user=$POSTGRES_USER \
         password=$POSTGRES_PASSWORD \
-        validateSchemaVersion=no
+        validateSchemaVersion=no \
+        --buffer
     fi
 }
 
