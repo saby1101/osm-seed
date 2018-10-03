@@ -45,7 +45,5 @@ function importData () {
 #     flag=false
 #     importData
 # done
-while true
-    echo "Sleep for one day... test"
-    sleep 1d
-done
+echo "Sleep for 30 days... test"
+sleep 30d
