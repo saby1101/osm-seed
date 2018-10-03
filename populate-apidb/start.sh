@@ -20,8 +20,7 @@ function importData () {
         database=$POSTGRES_DB \
         user=$POSTGRES_USER \
         password=$POSTGRES_PASSWORD \
-        validateSchemaVersion=no \
-        --buffer
+        validateSchemaVersion=no 
     else
         # In case the file is .osm
         # Extract the osm file
@@ -35,15 +34,18 @@ function importData () {
         database=$POSTGRES_DB \
         user=$POSTGRES_USER \
         password=$POSTGRES_PASSWORD \
-        validateSchemaVersion=no \
-        --buffer
+        validateSchemaVersion=no 
     fi
 }
 
-flag=true
-while "$flag" = true; do
-    pg_isready -h $POSTGRES_HOST -p 5432 -U $POSTGRES_USER >/dev/null 2>&2 || continue
-    # Change flag to false to stop ping the DB
-    flag=false
-    importData
+# flag=true
+# while "$flag" = true; do
+#     pg_isready -h $POSTGRES_HOST -p 5432 -U $POSTGRES_USER >/dev/null 2>&2 || continue
+#     # Change flag to false to stop ping the DB
+#     flag=false
+#     importData
+# done
+while true
+    echo "Sleep for one day... test"
+    sleep 1d
 done
