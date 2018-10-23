@@ -195,3 +195,21 @@ populateApidb:
     limits:
       memory: "2Gi"
       cpu: "2.5"
+
+# ====================================================================================================
+# Variables to process osm files
+# ====================================================================================================
+osmProcessor:
+  enabled: false
+  image: 'developmentseed/osmseed-osm-processor'
+  env: 
+    URL_FILE_TO_PROCESS: 'https://s3.amazonaws.com/osm-pds/2018/planet-181008.osm.pbf'
+    OMS_FILE_ACTION: simple_pbf
+  resources:
+    enabled: false
+    requests:
+      memory: "14Gi"
+      cpu: "4"
+    limits:
+      memory: "16Gi"
+      cpu: "4"
