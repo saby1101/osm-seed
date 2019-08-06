@@ -24,7 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
 # Fixing image_optim issues, installing a bush of libraries from : https://github.com/toy/image_optim#pngout-installation-optional
-RUN apt-get install -y advancecomp gifsicle jhead jpegoptim optipng
+RUN apt-get install -y advancecomp gifsicle jhead jpegoptim optipng libpng16-dev
 RUN git clone --recursive https://github.com/kornelski/pngquant.git && \
     cd pngquant && \
     ./configure && \
